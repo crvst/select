@@ -1,0 +1,19 @@
+.select
+  display: block
+  font-size: 13px
+  position: relative
+
+  +e(trigger)
+    button-trigger()
+    padding: ($gutter-select-small - 1) 30px $gutter-select-small $gutter-select
+    position: relative
+    z-index: 2
+    border: 1px solid $border-color-select-trigger
+    border-radius: 3px
+  +e(trigger-inner)
+    ellipsis(true) // nib mixin
+    display: block
+  +e(icon)
+    width: 13px
+    margin-top: -6px
+    absolute top 50% right 15px

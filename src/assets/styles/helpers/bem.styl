@@ -1,0 +1,14 @@
+$element_divider = '__'
+$modifier_divider = '_'
+
+e(name)
+  &{$element_divider}{name}
+    {block}
+
+m(key, value=true)
+  if value !=true
+    &{$modifier_divider}{key}{$modifier_divider}{value}
+      {block}
+  else
+    &{$modifier_divider}{key}
+      {block}

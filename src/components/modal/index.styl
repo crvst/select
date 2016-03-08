@@ -1,0 +1,40 @@
+@keyframes modal-animation
+  from
+    display: none
+    transform: translateY(-($gutter-select-small))
+    opacity: 0
+  1%
+    display: block
+  to
+    transform: translateY(0)
+    opacity: 1
+
+.modal
+  padding: 15px $gutter-select
+  margin: 0
+  list-reset()
+  display: none
+  position: absolute
+  right: 0
+  left: 0
+  z-index: 3
+  background: $background-select
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24)
+  transition: all 0.1s ease
+  transform: translateY(-($gutter-select-small))
+  opacity: 0
+
+  .select_opened &
+    display: block
+    transform: translateY(0)
+    opacity: 1
+
+  +e(item)
+    margin-x: -($gutter-select)
+    line-height: 1.55
+    +m(disabled)
+      cursor: not-allowed
+
+  +e(trigger)
+    padding: $gutter-select-small $gutter-select
+    button-trigger()
